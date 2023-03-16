@@ -7,9 +7,9 @@ class LoginCubit extends Cubit<LoginState> {
   late TextEditingController mailController;
   late TextEditingController passwordController;
 
-  final LoginRepository loginRepository = LoginRepository();
+  final LoginRepository loginRepository;
 
-  LoginCubit() : super(LoginState.initState) {
+  LoginCubit(this.loginRepository) : super(LoginState.initState) {
     mailController = TextEditingController(text: state.username);
     passwordController = TextEditingController(text: state.password);
   }
