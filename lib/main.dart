@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'presentation/login/login_screen.dart';
 import 'utils/theme.dart';
+import 'api/di_service.dart' as di;
 
-void main() {
+void main() async {
+
+  await di.init();
+
   runApp(const MyApp());
 }
 
