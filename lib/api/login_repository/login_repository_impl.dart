@@ -2,7 +2,6 @@ import 'package:three_bee_test/api/di_service.dart';
 import 'package:three_bee_test/api/login_repository/login_request.dart';
 import 'package:three_bee_test/api/login_repository/login_response.dart';
 import 'package:three_bee_test/api/source/base_http_client.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:three_bee_test/utils/const.dart';
 
 import 'login_repository.dart';
