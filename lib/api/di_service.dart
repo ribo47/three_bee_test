@@ -1,5 +1,7 @@
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:three_bee_test/api/hives_list/hives_list_repository.dart';
+import 'package:three_bee_test/api/hives_list/hives_list_repository_impl.dart';
 import 'package:three_bee_test/api/login_repository/login_repository.dart';
 import 'package:three_bee_test/api/source/base_http_client.dart';
 
@@ -12,6 +14,7 @@ Future<void> init() async {
   injector.registerSingletonAsync(SharedPreferences.getInstance);
   injector.registerSingleton<BaseHttpClient>(AppHttpClient());
   injector.registerSingleton<LoginRepository>(LoginRepositoryImpl(baseHttpClient));
+  injector.registerSingleton<HivesListRepository>(HivesListRepositoryImpl(baseHttpClient));
 }
 
 BaseHttpClient get baseHttpClient => injector<BaseHttpClient>();
@@ -19,3 +22,5 @@ BaseHttpClient get baseHttpClient => injector<BaseHttpClient>();
 SharedPreferences get prefs => injector.get<SharedPreferences>();
 
 LoginRepository get loginRepository => injector<LoginRepository>();
+
+HivesListRepository get hivesListRepository => injector<HivesListRepository>();

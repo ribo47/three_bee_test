@@ -1,36 +1,4 @@
 class Aries {
-  int? count;
-  String? next;
-  String? previous;
-  List<Results>? results;
-
-  Aries({this.count, this.next, this.previous, this.results});
-
-  Aries.fromJson(dynamic json) {
-    count = json['count'];
-    next = json['next'];
-    previous = json['previous'];
-    if (json['results'] != null) {
-      results = <Results>[];
-      json['results'].forEach((v) {
-        results!.add(Results.fromJson(v));
-      });
-    }
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['count'] = count;
-    data['next'] = next;
-    data['previous'] = previous;
-    if (results != null) {
-      data['results'] = results!.map((v) => v.toJson()).toList();
-    }
-    return data;
-  }
-}
-
-class Results {
   int? id;
   String? name;
   String? color;
@@ -46,9 +14,9 @@ class Results {
   String? thumbnailApiaryListUrl;
   String? description;
   String? imageId;
-  String? weights;
+  Weights? weights;
 
-  Results(
+  Aries(
       {this.id,
       this.name,
       this.color,
@@ -66,7 +34,7 @@ class Results {
       this.imageId,
       this.weights});
 
-  Results.fromJson(Map<String, dynamic> json) {
+  Aries.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
     color = json['color'];
@@ -104,5 +72,17 @@ class Results {
     data['image_id'] = imageId;
     data['weights'] = weights;
     return data;
+  }
+}
+
+class Weights {
+  dynamic delta;
+
+  Weights({
+    this.delta,
+  });
+
+  Weights.fromJson(Map<String, dynamic> json) {
+    delta = json['delta'];
   }
 }

@@ -5,6 +5,7 @@ const Color grey = Color(0xFFBDBDBD);
 const Color orange = Color(0xEAE0611A);
 const Color darkYellow = Color(0xFFFFB300);
 const Color lightYellow = Color(0xFFFFD35D);
+const Color green = Color(0xFF69BE54);
 
 class TBTheme {
   final globalTheme = ThemeData(
