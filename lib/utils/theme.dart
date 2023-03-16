@@ -13,19 +13,19 @@ class TBTheme {
     textTheme: const TextTheme(
       bodyText1: TextStyle(
         fontSize: 40,
-        color: white,
+        color: orange,
       ),
       bodyText2: TextStyle(
         fontSize: 40,
-        color: white,
+        color: orange,
         fontWeight: FontWeight.w300,
       ),
       caption: TextStyle(
         fontSize: 14,
-        color: white,
+        color: orange,
       ),
       button: TextStyle(
-        color: white,
+        color: orange,
         fontWeight: FontWeight.bold,
         fontSize: 27,
       ),
