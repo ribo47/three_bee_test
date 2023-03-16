@@ -45,7 +45,7 @@ class LoginScreen extends StatelessWidget {
             height: 80,
           ),
           TBButton(
-            cta: () => _cubit.loginTap(),
+            cta: () => _cubit.loginTap(context),
             text: 'LOGIN',
           ),
         ],

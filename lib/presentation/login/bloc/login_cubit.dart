@@ -14,8 +14,13 @@ class LoginCubit extends Cubit<LoginState> {
     passwordController = TextEditingController(text: state.password);
   }
 
-   Future<void> loginTap() async {
+   Future<void> loginTap(BuildContext context) async {
      final isLoggedIn = await loginRepository.login(mailController.text, passwordController.text);
-     print('login ok? $isLoggedIn');
+     if(isLoggedIn){
+       //Todo: change to a context-less type navigation
+       Navigator.pushNamed(context, '/hives');
+     }
    }
+
+
 }
