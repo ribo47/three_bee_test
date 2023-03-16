@@ -10,11 +10,11 @@ class LoginRequest extends BaseRequest {
   LoginRequest(this.mail, this.password)
       : super(
       baseUrl: Constants.baseUrl,
-      endPoint: "/auth/jwt/create",
+      endPoint: "auth/jwt/create/",
       method: RestMethod.post,
       responseDecoder: LoginResponse.fromJson,
   );
 
   @override
-  Map<String, dynamic> get body => {"mail": mail, "password": password};
+  Map<String, dynamic> get body => {"email": mail, "password": password};
 }

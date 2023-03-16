@@ -16,13 +16,6 @@ abstract class BaseRequest {
         Headers.acceptHeader: Headers.jsonContentType,
       };
 
-  Map<String, String> get multipartHeader => {
-        Headers.contentTypeHeader: 'multipart/form-data',
-        Headers.acceptHeader: Headers.jsonContentType,
-      };
-
-
-
 
   Map<String, dynamic> get body => {};
 
@@ -43,9 +36,7 @@ abstract class BaseRequest {
     required this.endPoint,
     required this.method,
     dynamic Function(dynamic)? responseDecoder,
-  })  : baseUrl = baseUrl.endsWith('/')
-            ? baseUrl.replaceRange(baseUrl.lastIndexOf('/'), null, '')
-            : baseUrl,
+  })  : baseUrl = baseUrl,
         decoder = responseDecoder ?? defaultDecoder;
 }
 

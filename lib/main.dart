@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:three_bee_test/presentation/hives_list/hives_lists_screen.dart';
 
 import 'presentation/login/login_screen.dart';
 import 'utils/theme.dart';
 import 'api/di_service.dart' as di;
 
 void main() async {
+
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
 
   await di.init();
 
@@ -22,6 +25,7 @@ class MyApp extends StatelessWidget {
       theme: TBTheme().globalTheme,
       routes: {
         '/': (context) => const LoginScreen(),
+        '/hives': (context) => const HivesListScreen(),
       },
     );
   }
