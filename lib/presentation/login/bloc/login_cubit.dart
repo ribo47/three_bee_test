@@ -11,5 +11,5 @@ class LoginCubit extends Cubit<LoginState> {
     passwordController = TextEditingController(text: state.password);
   }
 
-   loginTap() {}
+   void loginTap() {}
 }

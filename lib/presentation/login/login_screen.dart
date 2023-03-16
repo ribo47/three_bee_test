@@ -23,21 +23,32 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildBody(BuildContext context, LoginState state){
+  Widget _buildBody(BuildContext context, LoginState state) {
     final _cubit = context.read<LoginCubit>();
-    return Column(
-      children: [
-        TBTextField(
-          controller: _cubit.mailController,
-        ),
-        TBTextField(
-          controller: _cubit.mailController,
-        ),
-        TBButton(
-          cta: _cubit.loginTap(),
-          text: 'LOGIN',
-        ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 18),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          TBTextField(
+            controller: _cubit.mailController,
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          TBTextField(
+            controller: _cubit.passwordController,
+            isPassword: true,
+          ),
+          const SizedBox(
+            height: 80,
+          ),
+          TBButton(
+            cta: () => _cubit.loginTap(),
+            text: 'LOGIN',
+          ),
+        ],
+      ),
     );
   }
 }

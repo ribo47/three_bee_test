@@ -24,7 +24,8 @@ class TBTheme {
         color: white,
       ),
       button: TextStyle(
-        color: darkYellow,
+        color: white,
+        fontWeight: FontWeight.bold,
         fontSize: 27,
       ),
     ),
